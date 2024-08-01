@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>ffxiv tool</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>FFXIV Tool</h1>
+        <h3>Note: Currently only Uraeus Coat</h3>
+        <div class="selectionContainer">
+            <label for="region">Region :</label>
+            <select id="region">
+                <option value="Aether">Aether</option>
+                <option value="Adamantoise">>Adamantoise</option> 
+                <option value="Cactuar">>Cactuar</option>
+                <option value="Faerie">>Faerie</option>
+                <option value="Gilgamesh">>Gilgamesh</option> 
+                <option value="Jenova">>Jenova</option>
+                <option value="Midgardsormr">>Midgardsormr</option>
+                <option value="Sargatanas">>Saragatanas</option>
+                <option value="Siren">>Siren</option>
+                <option value="Crystal">Crystal</option>
+                <option value="Dynamis">Dynamis</option>
+                <option value="Materia">Materia</option> 
+            </select> 
+        </div>
+
+        <div class="searchContainer">
+            <label for="searchKeyword">&nbsp;Search :</label>
+            <input type="text" id="searchKeyword" placeholder="Search...">
+            <button onclick="getMarketData(true)">Search</button>
+        </div>
+
+        <div class="marketContainer">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Server</th>
+                    <th>HQ</th>
+                    <th>Unit Price</th>
+                    <th>QTY</th>
+                    <th>Total</th>
+                    <th>Retainer</th>
+                </tr>
+                <tbody id="marketTable"></tbody>
+            </table>
+        </div>
+
+        <div class="recentContainer">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Server</th>
+                    <th>HQ</th>
+                    <th>Unit Price</th>
+                    <th>QTY</th>
+                    <th>Total</th>
+                    <th>Buyer</th>
+                </tr>
+                <tbody id="recentTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background-color: #495057;
+    color: #F0F8FF;
+}
+
+.selectionContainer {
+    float: left;
+}
+
+table {
+    border: 2px solid #F0F8FF;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.marketContainer {
+    float: left;
+    margin-right: 20px;
+}
+
+.unit {
+    color: rgb(120, 187, 20);
+}
+
+.total {
+    color: rgb(245, 216, 143);
+}
+
+th, td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
