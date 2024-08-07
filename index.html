@@ -8,10 +8,9 @@
     <title>ffxiv tool</title>
 </head>
 <body>
-    
     <div class="container">
         <h1>FFXIV Item Tool</h1>
-        <h3>Note: Currently only Uraeus Coat</h3>
+        <h3>Note: needs exact name (not case sensitive)</h3>
         <div class="selectionContainer">
             <label for="region">Region :</label>
             <select id="region">
@@ -33,7 +32,7 @@
         <div class="searchContainer">
             <label for="searchKeyword">&nbsp;Search :</label>
             <input type="text" id="searchKeyword" placeholder="Search...">
-            <button onclick="getMarketData(true)">Search</button>
+            <button onclick="getMarketData(true);getItemData(true)">Search</button>
         </div>
 
         <div class="marketContainer">
