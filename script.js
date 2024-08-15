@@ -14,23 +14,24 @@ async function getMarketData(isSearching) {
 
     isLoading = true;
     
+	// api
     let newId = await getID(document.getElementById('searchKeyword').value)
     let url;
-
     if (isSearching) {
         let region = document.getElementById('region').value;
         url = `https://universalis.app/api/v2/${region}/${newId}?listings=${listings}&entries=${entries}`;
     } 
-   
+    let response = await fetch(url);
+    let data = await response.json();
+	
+	// sale velocity
+	// https://universalis.app/api/v2/aggregated/73/14
+	
+	// sale lisings and transactions entries
     const market = document.getElementById('marketTable');
     market.innerHTML = '';
     const recent = document.getElementById('recentTable');
     recent.innerHTML = '';
-
-    let response = await fetch(url);
-    let data = await response.json();
-
-    
     data.listings.forEach((listing, index) => {
         let isHighQuality;
         if (listing.hq) {
@@ -53,9 +54,6 @@ async function getMarketData(isSearching) {
         listItem.innerHTML = `<tr><td>${index + 1}</td><td>${server}</td><td>${isHighQuality}</td><td class="unit">${listing.pricePerUnit}</td><td>${listing.quantity}</td><td class="total">${listing.total}</td><td>${listing.retainerName}</td></tr>`;
         market.appendChild(listItem);
     });
-
-    
-    
     data.recentHistory.forEach((listing, index) => {
         let isHighQuality;
         if (listing.hq) {
